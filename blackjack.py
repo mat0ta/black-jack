@@ -1,6 +1,5 @@
 from random import *
 from itertools import *
-from tkinter import *
 
 cartas = { 
     chr(0x1f0a1): 11, 
@@ -17,3 +16,9 @@ cartas = {
     chr(0x1f0ad): 10, 
     chr(0x1f0ae): 10, 
 }
+
+cartaElegida = [chr(x) for x in range(0x1f0a1, 0x1f0af)]
+print(choice(cartaElegida))
+
+for i in range(len(cartas)):
+    print(list(cartas.keys())[i])
