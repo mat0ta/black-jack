@@ -44,16 +44,35 @@ class blackjack():
         if str(decision).lower() == 'hit':
             blackjack().hit(self.mano)
         elif str(decision).lower() == 'stand':
-            blackjack().stand()
+            blackjack().stand(blackjack().calcularMano(self.mano), self.mano)
     def hit(self, mazo):
-        shuffle(self.baraja)
-        card = self.baraja.pop()
-        mazo.append(card)
+        blackjack().darCartas(1, mazo)
         puntos = blackjack().calcularMano(mazo)
         if puntos > 21:
             return print('Te has pasado. Tienes ' + str(puntos) + ' puntos.')
-    def stand(self):
-        print('Stand')
+        else:
+            print('\nTu mano:\n' + mazo[0] + ' ' + mazo[1] + '\nPuntos: ' + str(puntos))
+            decision = input('\n¿Que quieres hacer? (HIT/STAND): ')
+            if str(decision).lower() == 'hit':
+                blackjack().hit(mazo)
+            elif str(decision).lower() == 'stand':
+                blackjack().stand(puntos, mazo)
+    def stand(self, puntosMano, mano):
+        blackjack().darCartas(1, self.dealer)
+        puntos = blackjack().calcularMano(self.dealer)
+        while puntos <= 16:
+            blackjack().darCartas(1, self.dealer)
+            puntos = blackjack().calcularMano(self.dealer)
+        if puntos > 21:
+            print('Tu mano:\n' + str(' '.join(mano)) + '\nPuntos: ' + str(puntosMano) + '\n\nDealer:\n' + str(' '.join(self.dealer)) + '\nPuntos: ' + str(puntos) + '\n')
+            return print('El Dealer se ha pasado. ¡Has ganado!')
+        else:
+            if puntos >= puntosMano:
+                print('Tu mano:\n' + str(' '.join(mano)) + '\nPuntos: ' + str(puntosMano) + '\n\nDealer:\n' + str(' '.join(self.dealer)) + '\nPuntos: ' + str(puntos) + '\n')
+                return print('El Dealer te ha superado con ' + str(puntos) + ' puntos frente a tus ' + str(puntosMano) + ' puntos. ¡Has perdido!')
+            else:
+                print('Tu mano:\n' + str(' '.join(mano)) + '\nPuntos: ' + str(puntosMano) + '\n\nDealer:\n' + str(' '.join(self.dealer)) + '\nPuntos: ' + str(puntos) + '\n')
+                return print('!Tu mano es la ganadora¡ Con ' + str(puntosMano) + ' puntos frente a los ' + str(puntos) + ' puntos del Dealer.')
     def testDef(self):
         blackjack().darMano(2, self.mano)
 
