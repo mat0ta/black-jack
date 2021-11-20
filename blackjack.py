@@ -17,9 +17,20 @@ cartas = {
     chr(0x1f0ae): 10
 }
 
-baraja = list(cartas.keys()) * 4
+class blackjack():
+    def __init__(self):
+        self.mano = []
+        self.banca = []
+        self.baraja = list(cartas.keys()) * 4
+    def darMano(self):
+        for i in range(2):
+            shuffle(self.baraja)
+            card = self.baraja.pop()
+            self.mano.append(card)
+        return self.mano
 
-print(cartas[baraja[1]])
+blackjack().juego()
+# print(cartas[baraja[1]])
 
 
 
