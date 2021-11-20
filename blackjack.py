@@ -22,26 +22,36 @@ class blackjack():
         self.mano = []
         self.dealer = []
         self.baraja = list(cartas.keys()) * 4
-    def darCartas(self, cantidad, mano):
+    def darCartas(self, cantidad, mazo):
         for i in range(cantidad):
             shuffle(self.baraja)
             card = self.baraja.pop()
-            mano.append(card)
-    def calcularMano(self, mano):
+            mazo.append(card)
+    def calcularMano(self, mazo):
         puntos = 0
-        for i in range(len(mano)):
+        for i in range(len(mazo)):
             try:
-                puntos += cartas[mano[i]]
-                return puntos
+                puntos += cartas[mazo[i]]
             except:
                 return print('Ha ocurrido un error.')
+        return puntos
     def iniciarJuego(self):
         print('¡Bienvenido al Blackjack!\nA continuacion el Dealer te asignara tu mano.')
         blackjack().darCartas(2, self.mano)
         blackjack().darCartas(1, self.dealer)
         print('Tu mano:\n' + self.mano[0] + ' ' + self.mano[1] + '\nPuntos: ' + str(blackjack().calcularMano(self.mano)) + '\n\nDealer:\n' + self.dealer[0] + '\nPuntos: ' + str(blackjack().calcularMano(self.dealer)))
-    def hit(self):
-        print('Hit')
+        print(self.mano)
+        blackjack().hit(self.mano)
+    def hit(self, mazo):
+        print(mazo)
+        shuffle(self.baraja)
+        card = self.baraja.pop()
+        mazo.append(card)
+        puntos = blackjack().calcularMano(mazo)
+        if puntos > 21:
+            return print('Te has pasado. Tienes ' + str(puntos) + ' puntos.')
+        print(mazo)
+        print(puntos)
     def stand(self):
         print('Stand')
     def testDef(self):
