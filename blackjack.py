@@ -22,7 +22,7 @@ class blackjack():
         self.mano = []
         self.banca = []
         self.baraja = list(cartas.keys()) * 4
-    def darMano(self, cantidad, mano):
+    def darCartas(self, cantidad, mano):
         for i in range(cantidad):
             shuffle(self.baraja)
             card = self.baraja.pop()
