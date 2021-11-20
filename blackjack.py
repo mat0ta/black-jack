@@ -40,18 +40,18 @@ class blackjack():
         blackjack().darCartas(2, self.mano)
         blackjack().darCartas(1, self.dealer)
         print('Tu mano:\n' + self.mano[0] + ' ' + self.mano[1] + '\nPuntos: ' + str(blackjack().calcularMano(self.mano)) + '\n\nDealer:\n' + self.dealer[0] + '\nPuntos: ' + str(blackjack().calcularMano(self.dealer)))
-        print(self.mano)
-        blackjack().hit(self.mano)
+        decision = input('¿Que quieres hacer? (HIT/STAND): ')
+        if str(decision).lower() == 'hit':
+            blackjack().hit(self.mano)
+        elif str(decision).lower() == 'stand':
+            blackjack().stand()
     def hit(self, mazo):
-        print(mazo)
         shuffle(self.baraja)
         card = self.baraja.pop()
         mazo.append(card)
         puntos = blackjack().calcularMano(mazo)
         if puntos > 21:
             return print('Te has pasado. Tienes ' + str(puntos) + ' puntos.')
-        print(mazo)
-        print(puntos)
     def stand(self):
         print('Stand')
     def testDef(self):
