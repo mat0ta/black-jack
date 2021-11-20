@@ -1,5 +1,5 @@
-<h1 align='center'>Juego de Blackjack en Python</h1>
+### Juego de Blackjack en Python
 
-<h5 align='left'>Mi cuenta de Github: </h5><a href="https://github.com/mat0ta/">mat0ta</a>
+Mi cuenta de Github: [mat0ta]("https://github.com/mat0ta/")
 
-<h5 align='left'>El link del Repositorio: </h5><a href="https://github.com/mat0ta/blackjack/">Juego de Blackjack</a>
+El link del Repositorio: [Juego de Blackjack en Python]("https://github.com/mat0ta/blackjack/")
