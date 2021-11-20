@@ -19,10 +19,14 @@ cartas = {
 
 baraja = list(cartas.keys()) * 4
 
-print(baraja)
+print(cartas[baraja[1]])
 
-cartaElegida = [chr(x) for x in range(0x1f0a1, 0x1f0ae)]
-print(choice(cartaElegida))
 
-# for i in range(len(cartas)):
-#     print(list(cartas.keys())[i])
+
+# print(baraja)
+
+# cartaElegida = [chr(x) for x in range(0x1f0a1, 0x1f0ae)]
+# print(choice(cartaElegida))
+
+# # for i in range(len(cartas)):
+# #     print(list(cartas.keys())[i])
