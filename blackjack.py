@@ -22,6 +22,16 @@ class blackjack():
         self.mano = []
         self.dealer = []
         self.baraja = list(cartas.keys()) * 4
+    def iniciarJuego(self):
+        print('¡Bienvenido al Blackjack!\nA continuacion el Dealer te asignara tu mano.')
+        blackjack().darCartas(2, self.mano)
+        blackjack().darCartas(1, self.dealer)
+        print('Tu mano:\n' + self.mano[0] + ' ' + self.mano[1] + '\nPuntos: ' + str(blackjack().calcularMano(self.mano)) + '\n\nDealer:\n' + self.dealer[0] + '\nPuntos: ' + str(blackjack().calcularMano(self.dealer)))
+        decision = input('¿Que quieres hacer? (HIT/STAND): ')
+        if str(decision).lower() == 'hit':
+            blackjack().hit(self.mano)
+        elif str(decision).lower() == 'stand':
+            blackjack().stand(blackjack().calcularMano(self.mano), self.mano)
     def darCartas(self, cantidad, mazo):
         for i in range(cantidad):
             shuffle(self.baraja)
@@ -35,16 +45,6 @@ class blackjack():
             except:
                 return print('Ha ocurrido un error.')
         return puntos
-    def iniciarJuego(self):
-        print('¡Bienvenido al Blackjack!\nA continuacion el Dealer te asignara tu mano.')
-        blackjack().darCartas(2, self.mano)
-        blackjack().darCartas(1, self.dealer)
-        print('Tu mano:\n' + self.mano[0] + ' ' + self.mano[1] + '\nPuntos: ' + str(blackjack().calcularMano(self.mano)) + '\n\nDealer:\n' + self.dealer[0] + '\nPuntos: ' + str(blackjack().calcularMano(self.dealer)))
-        decision = input('¿Que quieres hacer? (HIT/STAND): ')
-        if str(decision).lower() == 'hit':
-            blackjack().hit(self.mano)
-        elif str(decision).lower() == 'stand':
-            blackjack().stand(blackjack().calcularMano(self.mano), self.mano)
     def hit(self, mazo):
         blackjack().darCartas(1, mazo)
         puntos = blackjack().calcularMano(mazo)
