@@ -46,14 +46,5 @@ class blackjack():
         print('Stand')
     def testDef(self):
         blackjack().darMano(2, self.mano)
-# print(cartas[baraja[1]])
 
 blackjack().iniciarJuego()
-
-# print(baraja)
-
-# cartaElegida = [chr(x) for x in range(0x1f0a1, 0x1f0ae)]
-# print(choice(cartaElegida))
-
-# # for i in range(len(cartas)):
-# #     print(list(cartas.keys())[i])
