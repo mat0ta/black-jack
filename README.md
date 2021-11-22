@@ -8,7 +8,8 @@ El link del Repositorio: [Juego de Blackjack en Python](https://github.com/mat0t
 
 El código correspondiente al ejercicio propuesto sigue el siguiente diagrama de flujo:
 
-(insertar diagrama)
+![Diagrama en blanco](https://user-images.githubusercontent.com/72810000/142834187-f6263933-8efa-4264-9cd9-68b9f742668d.png)
 
+[Diagrama de Flujo para Juego de Blackjack](https://user-images.githubusercontent.com/72810000/142834187-f6263933-8efa-4264-9cd9-68b9f742668d.png)
 ---
 
