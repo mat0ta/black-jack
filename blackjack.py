@@ -76,4 +76,5 @@ class blackjack():
     def testDef(self):
         blackjack().darMano(2, self.mano)
 
-blackjack().iniciarJuego()
+if __name__ == "__main__":
+   blackjack().iniciarJuego()
