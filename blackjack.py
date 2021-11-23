@@ -1,6 +1,5 @@
 from random import *
 from itertools import *
-import json
 
 cartas = { 
     chr(0x1f0a1): 11, 
@@ -75,8 +74,6 @@ class blackjack():
             else:
                 print('Tu mano:\n' + str(' '.join(mano)) + '\nPuntos: ' + str(puntosMano) + '\n\nDealer:\n' + str(' '.join(self.dealer)) + '\nPuntos: ' + str(puntos) + '\n')
                 return print('!Tu mano es la ganadora¡ Con ' + str(puntosMano) + ' puntos frente a los ' + str(puntos) + ' puntos del Dealer.')
-    def testDef(self):
-        blackjack().darMano(2, self.mano)
 
 if __name__ == "__main__":
    blackjack().iniciarJuego()
