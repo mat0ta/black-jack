@@ -1,5 +1,6 @@
 from random import *
 from itertools import *
+import json
 
 cartas = { 
     chr(0x1f0a1): 11, 
@@ -17,13 +18,12 @@ cartas = {
     chr(0x1f0ae): 10
 }
 
-contador = open('./contador.json')
-
 class blackjack():
     def __init__(self):
         self.mano = []
         self.dealer = []
         self.baraja = list(cartas.keys()) * 4
+        self.nombre = 'None'
     def iniciarJuego(self):
         print('¡Bienvenido al Blackjack!\nA continuacion el Dealer te asignara tu mano.')
         blackjack().darCartas(2, self.mano)
