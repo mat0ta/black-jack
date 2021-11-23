@@ -22,8 +22,14 @@ class blackjack():
         self.mano = []
         self.dealer = []
         self.baraja = list(cartas.keys()) * 4
-        self.nombre = 'None'
+        self.jugadores = 0
+        self.nombres = []
     def iniciarJuego(self):
+        self.jugadores = int(input('¿Cuantos jugadores van a jugar?: '))
+        for i in range(self.jugadores):
+            nombre = str(input('Nombre del jugador ' + str(i + 1) + ' :'))
+            self.nombres.append(nombre)
+        print(self.nombres)
         print('¡Bienvenido al Blackjack!\nA continuacion el Dealer te asignara tu mano.')
         blackjack().darCartas(2, self.mano)
         blackjack().darCartas(1, self.dealer)
