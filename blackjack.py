@@ -17,6 +17,8 @@ cartas = {
     chr(0x1f0ae): 10
 }
 
+contador = open('./contador.json')
+
 class blackjack():
     def __init__(self):
         self.mano = []
